@@ -11,15 +11,21 @@ import Footer from './Global/Footer';
 import items from '../data/menu';
 
 class App extends Component {
-  //static propTypes = {
-  //  children: PropTypes.object.isRequired
-  //};  
+  static propTypes = {
+    children: PropTypes.object.isRequired
+  };  
+
   render() {
+    const { children } = this.props;
+    
     return (
       <div className="App">
-        <Header tittle="Title" items={items} />
-        <Content />
-        <Footer copyright="&copy; Kr's  webside" />
+        <Header 
+          title="React" 
+          items={items}
+        />
+          <Content body={children} />
+        <Footer copyright="&copy; React 2018" />
       </div>
     );
   }

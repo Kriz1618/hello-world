@@ -1,16 +1,20 @@
+//Dependencies
 import React, { Component } from 'react';
-import logo from './images/logo.svg';
+import PropTypes from 'prop-types';
+
+//Assets
 import './ccs/Content.css';
 
 class Content extends Component {
-  render() {
-    return (
-      <div className="Content">
-        <div className="Content">
-          <h1> I'm the content</h1>
+  static propTypes = {
+    body: PropTypes.object.isRequired
+  }; 
 
-          <p> Content's Info</p>
-        </div>        
+  render() {
+    const { body } = this.props;
+    return (      
+      <div className="Content">
+        {body}                
       </div>
     );
   }
